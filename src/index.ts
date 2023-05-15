@@ -20,7 +20,8 @@ app.get('/info', (req, res) => {
     hostname: os.hostname(),
     ipAddress: getIPAddress(),
     uptime: formatUptime(process.uptime()),
-    time: new Date().toISOString() 
+    time: new Date().toISOString() ,
+    headers: req.headers,
   };
   //res.json(serverInfo);
   res.set('Content-Type', 'application/json');
